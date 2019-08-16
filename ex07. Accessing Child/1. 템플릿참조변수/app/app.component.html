@@ -1,0 +1,8 @@
+<h1>템플릿 참조 변수를 사용하여 자식컴포넌트에 접근하기</h1>
+<counter #counter></counter>
+<!--방법1.
+<button (click)="counter.increaseCount()">+</button>
+<button (click)="counter.decreaseCount()">-</button>
+ -->
+ <button (click)="increase(counter)">+</button>
+<button (click)="decrease(counter)">-</button>

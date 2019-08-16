@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="form-inline">
+      <div class="form-group" style="margin: 30px 0">
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="form-control" placeholder="이름을 입력하세요" #name>
+
+        <label for="role">Role:</label>
+        <select id="role" class="form-control" #role>
+          <option>Administrator</option>
+          <option>Developer</option>
+          <option>Designer</option>
+        </select>
+        <button type="button" class="btn btn-primary" (click)="addUser(name.value, role.value)">Add user</button>
+      </div>
+    </div>
+  </div>
+  <app-user-list [users]="users" (remove)="removeUser($event)"></app-user-list>
+</div>

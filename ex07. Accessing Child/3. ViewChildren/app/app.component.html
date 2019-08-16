@@ -1,0 +1,6 @@
+<h1>ViewChildren 실습</h1>
+<h3>Parent</h3>
+<button type="button" (click)="toggle()">Toggle Child</button>
+<div *ngFor="let checkbox of checkboxs">
+  <child [checkbox]="checkbox"></child>
+</div>
