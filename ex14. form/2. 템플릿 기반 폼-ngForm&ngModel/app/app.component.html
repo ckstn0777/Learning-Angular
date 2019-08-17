@@ -1,0 +1,32 @@
+<h1>Angular 템플릿 기반 폼 실습</h1>
+<!--
+NgForm 디렉티브는 템플릿 기반 폼 전체를 관리하는 디렉티브이다
+NgForm 디렉티브는 NgForm 인스턴스를 생성할 때, 자신이 적용된 폼 요소의
+값이나 유효성 검증 상태를 추적할 수 있는 기능을 제공하는 FormGroup 인스턴스를 생성한 후, NgForm 인스턴스의 프로퍼티로 추가한다.
+
+NgModel 디렉티브는 자신이 적용된 폼 컨트롤 요소의 값이나 유효성 검증 상태의 추적 기능을 제공하는 FormControl 인스턴스를 생성한다
+이 FormControl 인스턴스는 FormGroup 인스턴스의 프로퍼티로 추가된다.
+FormGroup 인스턴스는 자신의 자식인 FormControl 인스턴스들을 하나의 객체로 그룹화하여 관리하기 위한 최상위 컨테이너로서
+모든 FormControl 인스턴스의 값과 유효성 상태를 관리한다
+
+NgForm > FormGroup > FormControl 순서
+-->
+
+<!--
+  그냥 템플릿 참조 변수를 참조하는 경우와 ngModel인스턴스를 참조하는 경우를 비교해보자.
+-->
+<form #userForm="ngForm" (ngSubmit)="onNgSubmit(userForm, userid, password)" novalidate>
+  <input type="text" name="userid" placeholder="userid" ngModel #userid="ngModel">
+  <input type="password" name="password" placeholder="password" ngModel #password>
+  <button>submit</button>
+</form>
+
+<!-- 템플릿 참조 변수를 통해 폼 컨트롤 요소의 값을 참조 -->
+<p>userid value: {{ userid.value }}</p>
+<!-- 템플릿 참조 변수를 통해 폼 컨트롤 요소의 유효성 검증 상태를 참조 -->
+<p>userid valid: {{ userid.valid }}</p>
+
+<p>password value: {{ password.value }}</p>
+<p>password valid: {{ password.valid }}</p>
+
+<!--따라서 참조 변수에 ngModel을 할당하면 참조 변수를 통해 값 또는 유효성 검증 상태 추적이 가능해진다.-->

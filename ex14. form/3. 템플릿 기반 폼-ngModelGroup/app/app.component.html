@@ -1,0 +1,9 @@
+<h1>Angular 템플릿 기반 폼 실습</h1>
+<form #userForm="ngForm" (ngSubmit)="onNgSubmit(userForm.value)" novalidate>
+  <input type="text" name="userid" placeholder="id" ngModel>
+  <div ngModelGroup="password">
+      <input type="password" name="password1" placeholder="password" ngModel>
+      <input type="password" name="password2" placeholder="confirm password" ngModel>
+  </div>
+  <button>submit</button>
+</form>
