@@ -1,0 +1,8 @@
+<h1 *myNgIf="condition">Hello {{name}}</h1>
+<!--
+사실 이런코드로 변환되는 것.
+<ng-template [myNgIf]="condition">
+  <h2>Hello </h2>
+</ng-template>
+-->
+<button (click)="condition = !condition">Click</button>

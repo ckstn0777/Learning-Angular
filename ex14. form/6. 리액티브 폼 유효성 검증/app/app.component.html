@@ -1,0 +1,16 @@
+<h1>리액티브 폼</h1>
+<form [formGroup]="userForm" novalidate>
+  <div>
+    <input type="text" formControlName="userid" placeholder="user id">
+  </div>
+  <div formGroupName="passwordGroup">
+    <div>
+      <input type="password" formControlName="password" placeholder="password">
+    </div>
+    <div>
+      <input type="password" formControlName="confirmPassword" placeholder="confirm password">
+    </div>
+  </div>
+</form>
+<pre>{{userForm.value | json}}</pre>
+<pre>{{userForm.status}}</pre>
